@@ -34,4 +34,5 @@ function createGrid() {
     // stampo in pagina il titolo e sfondo
     document.getElementById("title").innerText = "CAMPO MINATO"
     // document.body.style.backgroundColor = "lightblue";
+    // document.body.style.backgroundColor = "linear-gradient(to top, #6bf869, #fff066)";
 }
