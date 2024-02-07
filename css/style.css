@@ -5,6 +5,10 @@
 }
 /* reset */
 
+body, html{
+    min-height: 100%;
+}
+
 body{
     background: linear-gradient(to top, #6bf869, #fff066);
 }
