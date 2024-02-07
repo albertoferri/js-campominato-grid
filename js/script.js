@@ -11,5 +11,27 @@ const createGridElement = document.getElementById("createGrid-Btn");
 // inposto che al click fa partire la funzione "createGrid"
 createGridElement.addEventListener("click", createGrid);
 
-// stampo in pagina il titolo
-document.getElementById("title").innerText = "CAMPO MINATO"
+
+// L'utente clicca su un bottone che genererà una griglia di gioco quadrata.
+function createGrid() {
+    const gridElement = document.getElementById("grid");
+    // per evitare che generi ogni volta una griglia, resetto ogni volta 
+    gridElement.innerHTML = '';
+    
+    for (let i = 0; i < 100; i++) {
+        const squareElement = document.createElement("div");
+        squareElement.classList.add("square");
+        squareElement.innerHTML = i + 1; 
+        gridElement.append(squareElement);
+        
+        // cambio colore al click
+        squareElement.addEventListener("click", function(){
+            this.classList.toggle("active");
+            console.log("HAI SELEZIONATO LA CELLA: " + this.innerText)
+        });
+    }
+
+    // stampo in pagina il titolo e sfondo
+    document.getElementById("title").innerText = "CAMPO MINATO"
+    // document.body.style.backgroundColor = "lightblue";
+}
