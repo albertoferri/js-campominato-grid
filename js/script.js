@@ -11,6 +11,9 @@ const createGridElement = document.getElementById("createGrid-Btn");
 // inposto che al click fa partire la funzione "createGrid"
 createGridElement.addEventListener("click", createGrid);
 
+// codice per generare griglia
+let cellNumber;
+
 
 // L'utente clicca su un bottone che genererà una griglia di gioco quadrata.
 function createGrid() {
@@ -18,7 +21,19 @@ function createGrid() {
     // per evitare che generi ogni volta una griglia, resetto ogni volta 
     gridElement.innerHTML = '';
     
-    for (let i = 0; i < 100; i++) {
+    const selectElement = document.querySelector("#difficulty");
+    console.log(selectElement.value);
+
+    if (selectElement.value == "easy"){
+        cellNumber = 100;
+    } else if (selectElement.value == "medium"){
+        cellNumber = 81;
+    } else {
+        cellNumber = 49;
+    }
+    gridElement.className = selectElement.value;
+    
+    for (let i = 0; i < cellNumber; i++) {
         const squareElement = document.createElement("div");
         squareElement.classList.add("square");
         squareElement.innerHTML = i + 1; 

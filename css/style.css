@@ -32,6 +32,24 @@ body{
     cursor: pointer;
 }
 
+#grid.medium{
+    width: 810px;
+}
+
+#grid.medium .square{
+    width: 90px; 
+    height: 90px; 
+}
+
+#grid.hard{
+    width: 490px;
+}
+
+#grid.hard .square{
+    width: 70px; 
+    height: 70px; 
+}
+
 .square.active{
     background: linear-gradient(to bottom, #4d8bea, #f04141);
     color: white;
